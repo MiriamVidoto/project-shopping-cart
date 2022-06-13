@@ -1,7 +1,39 @@
 # Boas-vindas ao repositório do projeto Carrinho de Compras!
 
 
-##  Crie uma listagem de produtos
+## 1. (TDD) Desenvolva testes de no mínimo 25% de cobertura total e 100% da função `fetchProducts`
+
+<details>
+  <summary>
+    Implemente os testes necessários na função <code>fetchProducts</code>
+  </summary> <br />
+
+O arquivo para implementar o teste já está criado, se chama `fetchProducts.test.js` e se encontra dentro da pasta `tests`.
+
+**O que você deve testar:**
+
+- Teste se `fetchProducts` é uma função;
+
+- Execute a função `fetchProducts` com o argumento `'computador'` e teste se `fetch` foi chamada;
+
+- Teste se, ao chamar a função `fetchProducts` com o argumento `'computador'`, a função `fetch` utiliza o endpoint `'https://api.mercadolibre.com/sites/MLB/search?q=computador'`;
+
+- Teste se o retorno da função `fetchProducts` com o argumento `'computador'` é uma estrutura de dados igual ao objeto `computadorSearch`, que já está importado no arquivo.
+
+- Teste se, ao chamar a função `fetchProducts` sem argumento, retorna um erro com a mensagem: `'You must provide an url'`.
+
+> **De olho na dica 👀:** Lembre-se de usar o `new Error('mensagem esperada aqui')` para comparar com o objeto retornado da API.
+> Leia com bastante atenção o que está sendo solicitado e implemente um teste de cada vez!
+
+⚠️ **Atenção:** Você deve implementar todos os testes acima, independente do que for suficiente para a cobertura de testes.
+
+**O que será testado:**
+
+- Será avaliado se os testes implementados atingem no mínimo 25% da cobertura total e 100% da função `fetchProducts`.
+
+</details>
+
+## 2. Crie uma listagem de produtos
 
 <details>
   <summary>
@@ -97,9 +129,35 @@ Para executar sua função `fetchProducts` basta chamar no seu arquivo `script.j
 
 </details>
 
+## 3. (TDD) Desenvolva testes de no mínimo 50% de cobertura total e 100% da função `fetchItem`
 
+<details>
+  <summary>
+    Implemente os testes necessários na função <code>fetchItem</code>
+  </summary> <br />
 
-## Adicione o produto ao carrinho de compras
+**O que você deve testar:**
+
+- Teste se `fetchItem` é uma função;
+
+- Execute a função `fetchItem` com o argumento do item "MLB1615760527" e teste se `fetch` foi chamada;
+
+- Teste se, ao chamar a função `fetchItem` com o argumento do item "MLB1615760527", a função `fetch` utiliza o endpoint "https://api.mercadolibre.com/items/MLB1615760527";
+
+- Teste se o retorno da função `fetchItem` com o argumento do item "MLB1615760527" é uma estrutura de dados igual ao objeto `item` que já está importado no arquivo.
+
+- Teste se, ao chamar a função `fetchItem` sem argumento, retorna um erro com a mensagem: `'You must provide an url'`.
+
+> **De olho na dica 👀:** Lembre-se de usar o `new Error('mensagem esperada aqui')` para comparar com o objeto retornado da API.
+> Leia com bastante atenção o que está sendo solicitado e implemente um teste de cada vez!
+
+**O que será testado:**
+
+- Será avaliado se os testes implementados atingem no mínimo 50% da cobertura total e 100% da função `fetchItem`.
+
+</details>
+
+## 4. Adicione o produto ao carrinho de compras
 
 <details>
   <summary>
@@ -153,7 +211,15 @@ Por exemplo, se o `id` do produto for `MLB1341706310`, o retorno do _endpoint_ s
     "catalog_listing": true
 }
 ```
-## . Remova o item do carrinho de compras ao clicar nele
+</details>
+
+**O que será testado:**
+
+- O elemento com classe `.cart__items` deve adicionar o item escolhido, apresentando corretamente suas informações de id, título e preço.
+
+</details>
+
+## 5. Remova o item do carrinho de compras ao clicar nele
 
 <details>
   <summary>
@@ -170,8 +236,63 @@ Ao clicar em um dos itens do carrinho de compras, esse item deve ser removido da
 
 </details>
 
+## 6. (TDD) Desenvolva testes de no mínimo 75% de cobertura total e 100% da função `saveCartItems`
 
-##  Carregue o carrinho de compras ao iniciar a página
+<details>
+  <summary>
+    Implemente os testes necessários na função <code>saveCartItems</code>
+  </summary> <br />
+
+O arquivo para implementar o teste já está criado, se chama `saveCartItems.test.js` e se encontra dentro da pasta `tests`.
+
+⚠️ **Atenção:** Não altere a estrutura já implementada nos arquivos de testes, apenas adicione os testes dentro do bloco `describe`.
+
+**O que você deve testar:**
+
+- Teste se, ao executar `saveCartItems` com o argumento `<ol><li>Item</li></ol>`, o método `localStorage.setItem` é chamado;
+
+- Teste se, ao executar `saveCartItems` com o argumento `<ol><li>Item</li></ol>`, o método `localStorage.setItem` é chamado com dois parâmetros, sendo o primeiro 'cartItems' e o segundo sendo o valor passado como argumento para `saveCartItems`.
+
+> **De olho na dica 👀:** Lembre-se de usar o `new Error('mensagem esperada aqui')` para comparar com o objeto retornado da API.
+> Leia com bastante atenção o que está sendo solicitado e implemente um teste de cada vez!
+
+⚠️ **Atenção:** Você deve implementar todos os testes acima, independente do que for suficiente para a cobertura de testes.
+
+**O que será testado:**
+
+- Será avaliado se os testes implementados atingem no mínimo 75% da cobertura total e 100% da função `saveCartItems`.
+
+</details>
+
+## 7. (TDD) Desenvolva testes para atingir 100% de cobertura total e 100% da função `getSavedCartItems`
+
+<details>
+  <summary>
+    Implemente os testes necessários na função <code>getSavedCartItems</code>
+  </summary> <br />
+
+O arquivo para implementar o teste já está criado, se chama `getSavedCartItems.test.js` e se encontra dentro da pasta `tests`.
+
+⚠️ **Atenção:** Não altere a estrutura já implementada nos arquivos de testes, apenas adicione os testes dentro do bloco `describe`.
+
+**O que você testar:**
+
+- Teste se, ao executar `getSavedCartItems`, o método `localStorage.getItem` é chamado;
+
+- Teste se, ao executar `getSavedCartItems`, o método `localStorage.getItem` é chamado com o 'cartItems' como parâmetro.
+
+> **De olho na dica 👀:** Lembre-se de usar o `new Error('mensagem esperada aqui')` para comparar com o objeto retornado da API.
+> Leia com bastante atenção o que está sendo solicitado e implemente um teste de cada vez!
+
+⚠️ **Atenção:** Você deve implementar todos os testes acima, independente do que for suficiente para a cobertura de testes.
+
+**O que será testado:**
+
+- Será avaliado se os testes implementados atingem 100% da cobertura total e 100% da função `getSavedCartItems`.
+
+</details>
+
+## 8. Carregue o carrinho de compras ao iniciar a página
 
 <details>
   <summary>
@@ -194,7 +315,7 @@ Para isso, você terá de implementar as funções `saveCartItems` e `getSavedCa
 
 </details>
 
-##  Calcule o valor total dos itens do carrinho de compras
+## 9. Calcule o valor total dos itens do carrinho de compras
 
 <details>
   <summary>
@@ -217,7 +338,7 @@ Cada vez que o carrinho de compras é modificado, será necessário calcular o v
 
 </details>
 
-##  Limpe o carrinho de compras
+## 10. Limpe o carrinho de compras
 
 <details>
   <summary>
@@ -236,7 +357,7 @@ O botão para esvaziar o carrinho já está implementado, mas ele ainda não cum
 
 </details>
 
-##  Adicione um texto de `carregando` durante uma requisição à API
+## 11. Adicione um texto de `carregando` durante uma requisição à API
 
 <details>
   <summary>
