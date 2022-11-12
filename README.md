@@ -1,4 +1,4 @@
-# Projeto Carrinho de Compras
+# Boas-vindas ao repositório do projeto Carrinho de Compras!
 
 Projeto onde foi desenvolvido um carrinho de compras totalmente dinâmico, consumindo dados diretamente da API do Mercado Livre para buscar produtos à venda.
 
